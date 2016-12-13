@@ -1,0 +1,785 @@
+{
+    "namespace":"com.iot.data.schema",
+    "type":"record",
+    "doc":"This Schema describes about IoT data packet",
+    "name":"RcvdData",
+    "fields":[
+
+          {"name": "deviceId", "type": "string"},
+
+          {"name": "library",  "type": "string"},
+
+          {"name": "libraryVersion",  "type": "string"},
+
+          {"name": "appSecret", "type": "string"},
+
+          {"name": "server_ip", "type": "string"},
+
+          {"name": "server_time", "type": "string"},
+
+           {"name": "packet_id", "type": "string"},
+
+          {"name":"UNIQUE_ID_ACTION","type":{
+              "type":"map",
+              "values": "string"
+            }
+          },
+
+
+          {"name":"packet","type":{
+                  "type":"array",
+                  "items": {
+                    "namespace":"com.iot.data.schema",
+                    "name":"PacketData",
+                    "type":"record",
+                    "fields": [
+                        
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"Install_Referrer",
+                            "type": ["null", {
+                            "name": "InstallReferrerData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "userId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "referrer_String",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                }
+                            ]
+                        }],
+                            "default": null
+                        },
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"screen",
+                            "type": ["null", {
+                            "name": "ScreenData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "screenId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "sessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {"name":"properties","type":{
+                                      "type":"map",
+                                      "values": "string"
+                                    }
+                                }
+                            ]
+                        }],
+                            "default": null
+                        },
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"identity",
+                            "type": ["null", {
+                            "name": "IdentityData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "userId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "sessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {"name":"properties","type":{
+                                      "type":"map",
+                                      "values": "string"
+                                    }
+                                }
+                            ]
+                        }],
+                            "default": null
+                        }, 
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"events",
+                            "type": ["null", {
+                            "name": "EventsData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "userId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "sessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "event",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "position",
+                                    "type": ["null", "long"],
+                                    "default": null
+                                },
+                                {"name":"properties","type":{
+                                      "type":"map",
+                                      "values": "string"
+                                    }
+                                }
+                            ]
+                        }],
+                            "default": null
+                        },
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"stopSession",
+                            "type": ["null", {
+                            "name": "StopSessionData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "userId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "sessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "duration",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                }
+                            ]
+                        }],
+                            "default": null
+                        },
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"PUSH_ACTION",
+                            "type": ["null", {
+                            "name": "PushActionData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "userId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "sessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "PUSH_KEY",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                }
+                            ]
+                        }],
+                            "default": null
+                        },
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"ADVERTISING_ID_ACTION",
+                            "type": ["null", {
+                            "name": "AdvertisingIdActionData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "ADVERTISING_ID_KEY",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "sessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "ADVERTISING_ID_OPTOUT",
+                                    "type": ["null", "boolean"],
+                                    "default": null
+                                }
+                            ]
+                        }],
+                            "default": null
+                        },
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"startSession",
+                            "type": ["null", {
+                            "name": "StartSessionData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "sessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "screenName",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                }
+                            ]
+                        }],
+                            "default": null
+                        },
+
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"newDevice",
+                            "type": ["null", {
+                            "name": "NewDeviceData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "context",
+                                    "type": ["null", {
+                                        "name": "ContextData",
+                                        "type": "record",
+                                        "fields": [
+                                            {
+                                                "name": "features",
+                                                "type": ["null", {
+                                                "name": "FeaturesData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "hasNFC",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "hasTelephony",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "hasGPS",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "hasAccelerometer",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "hasBarometer",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "hasCompass",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "hasGyroscope",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "hasLightsensor",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "hasProximity",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "bluetoothVersion",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "display",
+                                                "type": ["null", {
+                                                "name": "DisplayData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "displayHeight",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "displayWidth",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "displayDensity",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "totalMemoryInfo",
+                                                "type": ["null", {
+                                                "name": "TotalMemoryInfoData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "totalRAM",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "totalStorage",
+                                                        "type": ["null", "double"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            }
+                                        ]
+                                    }],
+                                    "default": null
+                                }
+                            ]
+                        }],
+                            "default": null
+                        },
+
+                        {
+                            "namespace":"com.iot.data.schema",
+                            "name":"deviceInfo",
+                            "type": ["null", {
+                            "name": "DeviceInfoData",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "sessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "appSessionId",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "action",
+                                    "type": ["null", "string"],
+                                    "default": null
+                                },
+                                {
+                                    "name": "context",
+                                    "type": ["null", {
+                                        "name": "DevInfoContextData",
+                                        "type": "record",
+                                        "fields": [
+                                            {
+                                                "name": "appBuild",
+                                                "type": ["null", {
+                                                "name": "AppBuildData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "packageName",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "versionCode",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "versionName",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "device",
+                                                "type": ["null", {
+                                                "name": "DeviceData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "sdkVersion",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "releaseVersion",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "deviceBrand",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "deviceManufacturer",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "deviceModel",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "deviceBoard",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "deviceProduct",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "locale",
+                                                "type": ["null", {
+                                                "name": "LocaleData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "deviceCountry",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "deviceLanguage",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "location",
+                                                "type": ["null", {
+                                                "name": "LocationData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "latitude",
+                                                        "type": ["null", "double"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "longitude",
+                                                        "type": ["null", "double"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "speed",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "telephone",
+                                                "type": ["null", {
+                                                "name": "TelephoneData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "phoneCarrier",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "phoneRadio",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "inRoaming",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "namespace":"com.iot.data.schema",
+                                                "name":"wifi",
+                                                "type": ["null",{
+                                                    "name": "WifiData",
+                                                    "type": "map",
+                                                    "values": "string"
+                                                }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "bluetoothInfo",
+                                                "type": ["null", {
+                                                "name": "BluetoothInfoData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "bluetoothStatus",
+                                                        "type": ["null", "boolean"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "availableMemoryInfo",
+                                                "type": ["null", {
+                                                "name": "AvailableMemoryInfoData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "availableRAM",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "availableStorage",
+                                                        "type": ["null", "double"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "cpuInfo",
+                                                "type": ["null", {
+                                                "name": "CpuInfoData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "cpuTotal",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "cpuIdle",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    },
+                                                    {
+                                                        "name": "cpuUsage",
+                                                        "type": ["null", "long"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            },
+                                            {
+                                                "name": "USER_AGENT_ACTION",
+                                                "type": ["null", {
+                                                "name": "UserAgentActionData",
+                                                "type": "record",
+                                                "fields": [
+                                                    {
+                                                        "name": "userAgent",
+                                                        "type": ["null", "string"],
+                                                        "default": null
+                                                    }
+                                                ]
+                                            }],
+                                                "default": null
+                                            }
+                                        ]
+                                    }],
+                                    "default": null
+                                }
+                            ]
+                        }],
+                            "default": null
+                        }
+
+                    ]
+                  }
+            }
+          
+          }
+
+    ]
+}

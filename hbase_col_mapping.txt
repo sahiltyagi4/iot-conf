@@ -1,0 +1,132 @@
+has install referrer data: hasIRdata
+	install referrer action: IRAction
+	install referrer app session ID:IRAppSessionID
+	install referrer referrer string: IRRefString
+	install referrer timestamp: IRTimestamp
+	install referrer user ID: IRUserId
+
+has start session data: hasStartSessn
+	start session action: StartSessnAction
+	start session app session id: StartSessnAppSessionID
+	start session screen name: StartSessnScreenName
+	start session timestamp: StartSessnTimestamp
+	start session session id: StartSessnSessionID
+
+has stop session data: hasStopSessn
+	stop session action: StopSessnAction
+	stop session app session id: StopSessnAction
+	stop session duration: StopSessnDuration
+	stop session timestamp: StopSessnTimestamp
+	stop session session id: StopSessnSessionID
+	stop session user id: StopSessnUserID
+
+has screen data: hasScreen
+	screen action: ScreenAction
+	screen app session id: ScreenAppSessionID
+	screen timestamp: ScreenTimeStamp
+	screen session id: ScreenSessionID
+	has screen property: hasScreenProps
+		screen property key: ScreenProp__ + key
+
+has identity data: hasID
+	identity action: IDAction
+	identity app session id: IDAppSessionID
+	identity timestamp: IDTimeStamp
+	identity session id: IDSessionID
+	identity user id: IDUserID
+	has identity property: hasIDProps
+		identity property key: IDProp__ + key
+
+has Events data: hasEvents
+	Events action: EventsAction
+	Events app session id: EventsAppSessionID
+	Events timestamp: EventsTimeStamp
+	Events session id: EventsSessionID
+	Events user id: EventsUserID
+	**every event gets it's own dedicated column**
+	Events eventName: Events__ + timestamp + "__" + EventName
+	Events position: EventsPosition
+	has Events property: hasEventsProps
+		Events property name: EventsProp__ + timestamp + "__" + ** each Event ** + "__" + key
+
+has Push action: hasPushActn
+	push action action data: PushActnActionName
+	push action app session id: PushActnAppSessionID
+	push action push key: PushActnPushKey
+	push action timestamp: PushActnTimestamp
+	push action session id: PushActnSessionID
+	push action user id: PushActnUserID
+
+has advertising id action data: hasAdIDAction
+	advertising id action name: AdIDActionActionName
+	advertising id action app session id: AdIDActionAppSessionID
+	advertising id action advertising id key: AdIDActionAdIDKey
+	advertising id action timestamp: AdIDActionTimestamp
+	advertising id action session id: AdIDActionSessionID
+	advertising id action advertising id optout: AdIDActionAdIDOptOut
+
+has new device data: hasNewDev
+	new device action: NewDevAction
+	new device timestamp: NewDevTimeStamp
+	has new device context data: hasNewDevCxt
+		has new device context features data: hasNewDevCxtFeatures
+			new device context features nfc: hasNewDevCxtFeaturesNFC
+			new device context features telephony: hasNewDevCxtFeaturesTelephony
+			new device context features gps: hasNewDevCxtFeaturesGPS
+			new device context features accelerometer: hasNewDevCxtFeaturesAcclroMtr
+			new device context features barometer: hasNewDevCxtFeaturesBaromtr
+			new device context features compass: hasNewDevCxtFeaturesCompass
+			new device context features gyroscope: hasNewDevCxtFeaturesGyro
+			new device context features light sensor: hasNewDevCxtFeaturesLightSensr
+			new device context features proximity: hasNewDevCxtFeaturesProxmty
+			new device context features bluetooth version: hasNewDevCxtFeaturesBTVrsn
+		new device context display data: hasNewDevCxtDisplay
+			new device context display height: NewDevCxtDisplayHeight
+			new device context display width: NewDevCxtDisplayWidth
+			new device context display density: NewDevCxtDisplayDensity
+		new device context totalmemory data: hasNewDevCxtTotalMemry
+			new device context totalRAM: NewDevCxtTotalMemryRAM
+			new device context totalStorage: NewDevCxtTotalMemryStorage
+
+has device info data: hasDevInfo
+	device info action: DevInfoAction
+	device info timestamp: DevInfoTimestamp
+	device info app session id: DevInfoAppSessionID
+	device info session id: DevInfoSessionID
+	has device info context data: hasDevInfoCxt
+		has device info context appbuild: hasDevInfoCxtAppBuild
+			device info context appbuild package name: DevInfoCxtAppBuildPackageName
+			device info context appbuild version code: DevInfoCxtAppBuildVrsnCode
+			device info context appbuild version name: DevInfoCxtAppBuildVrsnName
+		has device info context device: hasDevInfoCxtDevice
+			device info context device sdk version: DevInfoCxtDeviceSDKVrsn
+			device info context device release version: DevInfoCxtDeviceReleaseVrsn
+			device info context device brand: DevInfoCxtDeviceBrand
+			device info context device manufacturer: DevInfoCxtDeviceManfactrer
+			device info context device model: DevInfoCxtDeviceModel
+			device info context device board: DevInfoCxtDeviceBoard
+			device info context device product: DevInfoCxtDeviceProduct
+		has device info context locale: hasDevInfoCxtLocale
+			device info context locale device country: DevInfoCxtLocaleDevCountry
+			device info context locale device language: DevInfoCxtLocaleDevLang
+		has device info context language: hasDevInfoCxtLocation
+			device info context language latitude: DevInfoCxtLocationLat
+			device info context language longitude: DevInfoCxtLocationLong
+			device info context language speed: DevInfoCxtLocationSpeed
+		has device info context telephone: hasDevInfoCxtTelephone
+			device info context telephone phone carrier: DevInfoCxtTelephonePhnCarrier 
+			device info context telephone phone radio: DevInfoCxtTelephonePhnRadio
+			device info context telephone in roaming: DevInfoCxtTelephoneInRoaming
+		has device info context wifi: hasDevInfoCxtWifi
+			device info context wifi: DevInfoCxtWifi
+		has device info context bluetooth info: hasDevInfoCxtBTInfo
+			device info context bluetooth info bluettoth status: DevInfoCxtBTInfoBTStatus
+		has device info context available memory info: hasDevInfoCxtAvailbleMemryInfo
+			device info context available memory info available RAM: DevInfoCxtAvailbleMemryInfoAvailRAM
+			device info context available memory info available Storage: DevInfoCxtAvailbleMemryInfoAvailStorage
+		has device info context CPU info: hasDevInfoCxtCPUInfo
+			device info context CPU info cpu total: DevInfoCxtCPUInfoTotal 
+			device info context CPU info cpu idle: DevInfoCxtCPUInfoIdle
+			device info context CPU info cpu usage: DevInfoCxtCPUInfoUsage
+		has device info context user agent action: hasDevInfoCxtUsrAgntActn
+			device info context user agent action user agent name: DevInfoCxtUsrAgntActnUsrAgnt
